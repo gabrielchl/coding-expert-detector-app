@@ -1,0 +1,206 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableRow?>
+<?import javafx.scene.control.TableCell?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.Tooltip?>
+<BorderPane fx:controller="sample.ResultController"
+            stylesheets="/sample/styles.css"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <BorderPane styleClass="appbar">
+            <center>
+                <Label text="Coding Expert Detector"/>
+            </center>
+            <right>
+                <Label text="X" onMouseClicked="#closeWindow" fx:id="closeBtn"/>
+            </right>
+        </BorderPane>
+    </top>
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="Filename">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="filename" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Classification">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="classification" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numLines" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Lines">
+                            <tooltip>
+                                <Tooltip text="Number of lines" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="emptyLines" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Empty Lines">
+                            <tooltip>
+                                <Tooltip text="Number of empty lines" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="avgLenLines" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="Lines Avg. Len.">
+                            <tooltip>
+                                <Tooltip text="Average Length of Lines" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numVariables" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Vars">
+                            <tooltip>
+                                <Tooltip text="Number of variables" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="avgLenVariables" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="Vars Avg. Len.">
+                            <tooltip>
+                                <Tooltip text="Average length of variables" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numIf" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# If">
+                            <tooltip>
+                                <Tooltip text="Number of if statements" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numFor" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# For">
+                            <tooltip>
+                                <Tooltip text="Number of for statements" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numDo" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Do">
+                            <tooltip>
+                                <Tooltip text="Number of do statements" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numWhile" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# While">
+                            <tooltip>
+                                <Tooltip text="Number of while statements" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numSwitch" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Switch">
+                            <tooltip>
+                                <Tooltip text="Number of switch statements" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numCast" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Cast">
+                            <tooltip>
+                                <Tooltip text="Number of casts" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="condSpaceRatio" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="if ( vs. if(">
+                            <tooltip>
+                                <Tooltip text="Ratio of bracket without to with a space before it" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bracketLineRatio" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="){ vs. )\n{">
+                            <tooltip>
+                                <Tooltip text="Ratio of curly bracket starting in same line to new line" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+                <TableColumn>
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numSpace" />
+                    </cellValueFactory>
+                    <graphic>
+                        <Label text="# Spaces">
+                            <tooltip>
+                                <Tooltip text="Number of spaces (excluding those for indentation)" />
+                            </tooltip>
+                        </Label>
+                    </graphic>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

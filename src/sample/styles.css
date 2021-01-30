@@ -1,0 +1,25 @@
+.root {
+    -fx-background-color: #fff;
+}
+
+.appbar {
+    -fx-background-color: #eee;
+    -fx-padding: 20px 12px 20px 12px;
+}
+
+.appbar .label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #36c;
+    -fx-text-fill: #fff;
+    -fx-label-padding: 6px 12px 6px 12px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: #447ff5;
+}

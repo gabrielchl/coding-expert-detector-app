@@ -1,0 +1,20 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:controller="sample.Main"
+            stylesheets="/sample/styles.css"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <BorderPane styleClass="appbar">
+            <center>
+                <Label text="Coding Expert Detector"/>
+            </center>
+            <right>
+                <Label text="X" onMouseClicked="#closeWindow" fx:id="closeBtn"/>
+            </right>
+        </BorderPane>
+    </top>
+    <center>
+        <Button text="Select File(s)" onAction="#selectFileTrigger" fx:id="fileSelectBtn"/>
+    </center>
+</BorderPane>
